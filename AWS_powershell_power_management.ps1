@@ -110,7 +110,6 @@ $region_list = Get-AWSRegion | select -expandproperty Region
 			$Instance_name = ($_.Tags | Where-Object {$_.Key -eq 'Name'}).Value
 			$power_Action = $NULL
 				if($Power_Options = ($_.Tags | Where-Object {$_.Key -eq 'Power_Options'}).Value) {
-				$power_options = "PowerOn,Mon:5,Tue:5,Wed:6,Thu:6,Fri:6,Sat:6,Sun:6;PowerOff,Mon:18,Tue:18,Wed:22,Thu:18,Fri:22,Sat:19,Sun:19;Notify,ryan.langley4@gmail.com"
 				$power_action = action_object $Power_Options
 				}
 				
